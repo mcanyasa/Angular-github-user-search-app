@@ -1,0 +1,31 @@
+.src-row{
+    background-color: aqua;
+    padding: 10px;
+}
+.ng-search-label{
+    font-size: 24px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.container-src,.src-row{
+    border-radius: 5px;
+}
+
+.container-result{
+    border-radius: 5px;
+    
+}
+
+.bg-title{
+    background-color: #ddd;
+    color: #000;
+    font-size: 16px;
+}
+
+ul li span{
+    color: #000;
+    font-weight: bold;
+}
+
+

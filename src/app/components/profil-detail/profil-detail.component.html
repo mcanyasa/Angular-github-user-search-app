@@ -1,0 +1,32 @@
+<div class="container container-src mt-4" >
+<div class="row">
+<div class="col-md-12 col-lg-12 mt-4">
+     <ul class="list-group" *ngIf="userDetail">
+      <li class="list-group-item text-center">
+        <img
+        src={{userDetail.avatar_url}}
+          alt=""
+          class="mx-auto img-fluid"
+        />
+      </li>
+      <li class="list-group-item"><span>Username:</span> {{userDetail.login}}</li>
+      <li class="list-group-item"><span>Location:</span>  {{userDetail.location  }}</li>
+      <li class="list-group-item"><span>E-mail:</span> {{userDetail.email  }}</li>
+      <li class="list-group-item"><span>Blog Link:</span> <a target="_blank" href="{{userDetail.blog}}"> {{userDetail.blog}}</a></li>
+      <li class="list-group-item"><span>URL:</span> <a target="_blank" href="{{userDetail.html_url}}"> {{userDetail.html_url}} </a></li>
+      <li class="list-group-item"><span>Repos URL:</span> <a target="_blank" href="{{userDetail.repos_url}}"> {{userDetail.repos_url}}</a></li>
+      <li class="list-group-item"><span>Public Repos:</span> {{userDetail.public_repos}}</li>
+      <li class="list-group-item"><span>Company:</span> {{userDetail.company  }}</li>
+      <li class="list-group-item"><span>Twitter:</span> <a target="_blank" href="{{userDetail.twittername}}"> {{userDetail.twittername}}</a></li>
+      <li class="list-group-item"><span>Followers:</span> {{userDetail.followers  }}</li>
+      <li class="list-group-item"><span>Following:</span> {{userDetail.following  }}</li>
+      <li class="list-group-item"><span>Member Since:</span> {{userDetail.created_at }}</li>
+    </ul> 
+  </div>
+  <div class="col-md-12 col-lg-2 mt-4 mb-4">
+    <button (click)="bckToNavigate()" class="btn btn-outline-info btn-block">
+      <span class="fa fa-plus-circle"></span>Back
+    </button>
+  </div>
+</div>
+</div>

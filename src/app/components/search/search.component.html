@@ -1,0 +1,42 @@
+<div class="container container-src mt-4" >
+    <div class="row src-row ml-1 mr-1">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label class="ng-search-label" for="ng-search-input">Github User Search</label>
+          <input
+            type="text"
+            id="ng-search-input"
+            name="ng-search-input"
+            class="form-control"
+            placeholder="Enter Github Username and Press Enter"
+            (keydown.enter)="getUserList()"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div *ngIf="isFavorite">
+    <div class="container mt-4">
+      <div class="row ml-1 mr-1 mb-3" >
+        <div class="col-md-12">
+          <h2 *ngIf="favoriteArray && favoriteArray.length>0">Favorites</h2>
+        </div>
+      </div> 
+    </div> 
+  <div class="container container-result mt-4"  *ngFor="let fav of favoriteArray; index as i">
+    <app-profile  (valueChange)='clkToRmvBtn($event)'  [pUser]="fav"></app-profile>
+  </div>
+</div> 
+  
+  
+  
+ 
+<div *ngIf="!isFavorite">
+  <div class="container container-result mt-4" *ngFor="let user of users; index as i">
+    <app-profile [pUser]="user.id"></app-profile>
+  </div>
+</div> 

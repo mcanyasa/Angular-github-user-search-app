@@ -1,0 +1,44 @@
+<div class="row ml-1 mr-1 mb-3" *ngIf="userDetail">
+      <div class="col-md-12">
+        <div class="card">
+          <h2 class="card-header"> {{userDetail.login}} </h2>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12 col-lg-4 text-center">
+                <img
+                src={{userDetail.avatar_url}}
+                  alt=""
+                  class="mx-auto img-fluid"
+                />
+                <div class="col-md-12 col-lg-12 mt-3">
+                  <button (click)="navigateToDetail()" class="btn btn-outline-info btn-block">
+                    <span class="fa fa-plus-circle"></span>View Profile
+                  </button>
+                </div>
+                <div class="col-md-12 col-lg-12 mt-3">
+                  <button *ngIf="!isInFavorite" (click)="addFavoriteList()"  class="btn btn-outline-info btn-block">
+                    <span class="fa fa-user"></span>Add to Favorite
+                  </button>
+                  <button *ngIf="isInFavorite" (click)="removeFavoriteList()" class="btn btn-outline-info btn-block">
+                      <span class="fa fa-user"></span>Remove to Favorite
+                    </button>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-8 mt-4">
+                <ul class="list-group" >
+                  <li class="list-group-item"><span>Username:</span> {{userDetail.login}}</li>
+                  <li class="list-group-item"><span> Location:</span>  {{userDetail.location  }}</li>
+                  <li class="list-group-item"><span>E-mail:</span> {{userDetail.email  }}</li>
+                  <li class="list-group-item"><span>Blog Link:</span> {{userDetail.blog  }}</li>
+                  <li class="list-group-item"><span>Member Since:</span>   {{userDetail.created_at }}</li>
+                </ul>
+              </div>
+            </div>
+  
+           
+            <div class="col-md-12 col-lg-4 mt-3"></div>
+          </div>
+        </div>
+      </div>
+</div>
+
